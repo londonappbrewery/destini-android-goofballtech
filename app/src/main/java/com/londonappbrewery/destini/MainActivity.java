@@ -51,42 +51,46 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void nextPage(String onPage, String answerChoice){
-       if (onPage.equals("T1_Story")){
-           if (answerChoice.equals("Ans1")){
-               mMainText.setText(R.string.T3_Story);
-               mCurrentPage = "T3_Story";
-               mTopButton.setText(R.string.T3_Ans1);
-               mBottomButton.setText(R.string.T3_Ans2);
-           }else{
-               mMainText.setText(R.string.T2_Story);
-               mCurrentPage = "T2_Story";
-               mTopButton.setText(R.string.T2_Ans1);
-               mBottomButton.setText(R.string.T2_Ans2);
-           }
-       }else if (onPage.equals("T2_Story")) {
-           if (answerChoice.equals("Ans1")) {
-               mMainText.setText(R.string.T3_Story);
-               mCurrentPage = "T3_Story";
-               mTopButton.setText(R.string.T3_Ans1);
-               mBottomButton.setText(R.string.T3_Ans2);
-           } else {
-               mMainText.setText(R.string.T4_End);
-               mCurrentPage = "End";
-               mTopButton.setText("The");
-               mBottomButton.setText("End");
-           }
-       }else if (onPage.equals("T3_Story")){
-           if (answerChoice.equals("Ans1")){
-               mMainText.setText(R.string.T6_End);
-               mCurrentPage = "End";
-               mTopButton.setText("The");
-               mBottomButton.setText("End");
-           }else{
-               mMainText.setText(R.string.T5_End);
-               mCurrentPage = "End";
-               mTopButton.setText("The");
-               mBottomButton.setText("End");
-           }
-       }
+        switch (onPage) {
+            case "T1_Story":
+                if (answerChoice.equals("Ans1")) {
+                    mMainText.setText(R.string.T3_Story);
+                    mCurrentPage = "T3_Story";
+                    mTopButton.setText(R.string.T3_Ans1);
+                    mBottomButton.setText(R.string.T3_Ans2);
+                } else {
+                    mMainText.setText(R.string.T2_Story);
+                    mCurrentPage = "T2_Story";
+                    mTopButton.setText(R.string.T2_Ans1);
+                    mBottomButton.setText(R.string.T2_Ans2);
+                }
+                break;
+            case "T2_Story":
+                if (answerChoice.equals("Ans1")) {
+                    mMainText.setText(R.string.T3_Story);
+                    mCurrentPage = "T3_Story";
+                    mTopButton.setText(R.string.T3_Ans1);
+                    mBottomButton.setText(R.string.T3_Ans2);
+                } else {
+                    mMainText.setText(R.string.T4_End);
+                    mCurrentPage = "End";
+                    mTopButton.setText("The");
+                    mBottomButton.setText("End");
+                }
+                break;
+            case "T3_Story":
+                if (answerChoice.equals("Ans1")) {
+                    mMainText.setText(R.string.T6_End);
+                    mCurrentPage = "End";
+                    mTopButton.setText("The");
+                    mBottomButton.setText("End");
+                } else {
+                    mMainText.setText(R.string.T5_End);
+                    mCurrentPage = "End";
+                    mTopButton.setText("The");
+                    mBottomButton.setText("End");
+                }
+                break;
+        }
     }
 }
